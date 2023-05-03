@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie website</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <style>
+        .name-input,.season-input,.season-text{
+            display: none;
+        }
+        .whole-web{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="whole-web">
+        <h3>What you are looking for?</h3>
+        <div class="type-input">
+            <input type="radio" id="movie" name="type" value="movie">
+            <label for="movie">Movie</label>
+            <input type="radio" id="web-shows" name="type" value="web-shows">
+            <label for="web-shows">Web Shows</label>
+        </div>          
+        <div class="video-input">
+            <input class="name-input" placeholder="" type="text">
+        </div>
+        <div class="season-input-section">
+            <p class="season-text">Please enter which season</p>
+            <label  for="number-input"></label>
+            <input class="season-input" type="number" id="number-input" name="number-input" min="1" max="20">
+        </div>
+        <div class="subit-info">
+            <a target="_blank" class="submit-btn" href="">Submit</a>
+        </div>
+    </div>
+</body>
+</html>

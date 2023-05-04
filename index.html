@@ -1,50 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie website</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <style>
-        .name-input,.season-input,.season-text{
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Montserrat";
+        }
+
+        .name-input,
+        .season-input,
+        .season-text {
             display: none;
         }
-        .whole-web{
+
+        .whole-web {
             text-align: center;
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
+
+        .wrap {
+            margin: 0 auto;
+            background: #fcedda;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 40px;
+            margin-top: 10%;
+            border-radius: 15px;
+            box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            font-weight: 400;
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        .type-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .season-text {
+            margin-bottom: 10px;
+        }
+
+        .name-input {
+            background: transparent;
+            border: 2px solid;
+            border-color: black;
+            height: 27px;
+            width: 200px;
+            font-weight: 500;
+
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            text-decoration: none;
+            background: forestgreen;
+            color: white;
+            border-radius: 5px;
+        }
+
+        input::placeholder {
+            color: #000000;
+        }
+
+        .season-input {
+            background: transparent;
+            width: 100px;
+            border: 1px solid;
+        }
     </style>
 </head>
+
 <body>
     <div class="whole-web">
-        <h3>What are you looking for?</h3>
-        <div class="type-input">
-            <input type="radio" id="movie" name="type" value="movie">
-            <label for="movie">Movie</label>
-            <input type="radio" id="web-shows" name="type" value="web-shows">
-            <label for="web-shows">Web Shows</label>
+        <div class="wrap">
+            <h3>What are you looking for?</h3>
+            <div class="type-input">
+                <input type="radio" id="movie" name="type" value="movie">
+                <label for="movie">Movie</label>
+                <input type="radio" id="web-shows" name="type" value="web-shows">
+                <label for="web-shows">Web Shows</label>
+                <input type="radio" id="horror-movies" name="type" value="horror-movies">
+                <label for="horror-movies">Horror Movies</label>
+            </div>
+            <div class="video-input">
+                <input class="name-input" placeholder="" type="text">
+            </div>
+            <div class="season-input-section">
+                <p class="season-text">Please enter which season</p>
+                <label for="number-input"></label>
+                <input class="season-input" type="number" id="number-input" name="number-input" min="1" max="20">
+            </div>
+            <div class="subit-info">
+                <a target="_blank" class="submit-btn" href="">Submit</a>
+            </div>
 
-            
-            <input type="radio" id="horror-movies" name="type" value="horror-movies">
-            <label for="horror-movies">Horror Movies</label>
-
-
-        </div>          
-        <div class="video-input">
-            <input class="name-input" placeholder="" type="text">
-        </div>
-        <div class="season-input-section">
-            <p class="season-text">Please enter which season</p>
-            <label  for="number-input"></label>
-            <input class="season-input" type="number" id="number-input" name="number-input" min="1" max="20">
-        </div>
-        <div class="subit-info">
-            <a target="_blank" class="submit-btn" href="">Submit</a>
         </div>
     </div>
 </body>
+
 </html>

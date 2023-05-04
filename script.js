@@ -47,6 +47,7 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
+                $(".submit-btn").attr("href" , "")
             }
         }
         if(selectedValue == "movie"){
@@ -62,6 +63,7 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
+                $(".submit-btn").attr("href" , "")
             }
         }      
         if(selectedValue == "horror-movies"){
@@ -75,6 +77,7 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
+                $(".submit-btn").attr("href" , "")
             }
         }  
     });

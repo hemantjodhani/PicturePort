@@ -20,7 +20,7 @@ $(document).ready(function(){
     $(".submit-btn").click(function(){
 
         if(selectedValue == "web-shows"){
-            var user_input = $(".name-input").val()
+            var user_input = $(".name-input").val().replaceAll("'", "");
             var season_input = $(".season-input").val()
             if(user_input != "" && season_input != ""){
                 user_input = $.trim(user_input);
@@ -36,7 +36,7 @@ $(document).ready(function(){
             }
         }
         if(selectedValue == "movie"){
-            var movie_name = $(".name-input").val()
+            var movie_name = $(".name-input").val().replaceAll("'", "");
             if(movie_name != ""){
                 movie_name = $.trim(movie_name);
                 var replaced_input = movie_name.replaceAll(" " , "-").toLowerCase();

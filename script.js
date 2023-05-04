@@ -23,11 +23,13 @@ $(document).ready(function(){
             var user_input = $(".name-input").val()
             var season_input = $(".season-input").val()
             if(user_input != "" && season_input != ""){
+                user_input = $.trim(user_input);
                 var replaced_input = user_input.replaceAll(" " , "-").toLowerCase();
                 web_shows_url = "https://www.nollyverse.com/serie/"+replaced_input+"/season-"+season_input;
                 $(".submit-btn").attr("href" , web_shows_url)
                 $("input[name='myRadio'][checked]").prop("checked", false);
                 $(".name-input").val("")
+                $(".season-input").val("")
             }
             else{
                 alert("Please fill proper Details")
@@ -36,11 +38,13 @@ $(document).ready(function(){
         if(selectedValue == "movie"){
             var movie_name = $(".name-input").val()
             if(movie_name != ""){
+                movie_name = $.trim(movie_name);
                 var replaced_input = movie_name.replaceAll(" " , "-").toLowerCase();
                 movie_url = "https://www.nollyverse.com/movie/"+replaced_input+"/download/"
                 $(".submit-btn").attr("href" , movie_url);
                 $("input[name='myRadio'][checked]").prop("checked", false);          
-                $(".name-input").val("")   
+                $(".name-input").val("")
+                $(".season-input").val("")   
             }
             else{
                 alert("Please fill proper Details")
@@ -49,9 +53,3 @@ $(document).ready(function(){
     });
 
 });
-
-
-
-
-/* function data_provider(){
-}*/

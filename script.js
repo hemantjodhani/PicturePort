@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     var movie_url = "https://www.nollyverse.com/movie/phenomena/download/"
     var web_shows_url = "https://www.nollyverse.com/serie/wednesday/season-1"
+    var horror_movie_url = "https://adhirit.online/lights-out-2016-full-movie-download-for-free-adhiritmovies/"
     var selectedValue = ""
 
     $('input[type="radio"][name="type"]').change(function() {
@@ -16,7 +17,20 @@ $(document).ready(function(){
             $(".season-input,.season-text").hide()
             $(".name-input").attr("placeholder" , "Search a Movie")
         }     
+        if(selectedValue == "horror-movies"){
+            $(".name-input").show()
+            $(".season-input,.season-text").hide()
+            $(".name-input").attr("placeholder" , "Search a Horror Movie")
+            $("body").css("background-color", "Black");
+            $("body").css("color", "white");
+        }
+        else{
+            $("body").css("background-color", "white");
+            $("body").css("color", "black");
+        }
     });
+
+
     $(".submit-btn").click(function(){
 
         if(selectedValue == "web-shows"){
@@ -49,7 +63,20 @@ $(document).ready(function(){
             else{
                 alert("Please fill proper Details")
             }
-        }        
+        }      
+        if(selectedValue == "horror-movies"){
+            var horror_movie_input = $(".name-input").val().replaceAll("'", "");
+            if(horror_movie_input != ""){
+                horror_movie_input= $.trim(horror_movie_input)
+                var replaced_input = horror_movie_input.replaceAll(" " , "-").toLowerCase();
+                horror_movie_url = "https://adhirit.online/"+replaced_input+"/"
+                $(".submit-btn").attr("href" , horror_movie_url)
+                $(".name-input").val("")
+            }
+            else{
+                alert("Please fill proper Details")
+            }
+        }  
     });
 
 });

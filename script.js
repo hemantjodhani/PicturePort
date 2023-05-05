@@ -34,7 +34,8 @@ $(document).ready(function(){
     $(".submit-btn").click(function(){
 
         if(selectedValue == "web-shows"){
-            var user_input = $(".name-input").val().replaceAll("'", "");
+            $(".submit-btn").attr("href" , "")
+            var user_input = $(".name-input").val().replaceAll("'", "").replaceAll(":", "");
             var season_input = $(".season-input").val()
             if(user_input != "" && season_input != ""){
                 user_input = $.trim(user_input);
@@ -47,11 +48,11 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
-                $(".submit-btn").attr("href" , "")
             }
         }
         if(selectedValue == "movie"){
-            var movie_name = $(".name-input").val().replaceAll("'", "");
+            $(".submit-btn").attr("href" , "")
+            var movie_name = $(".name-input").val().replaceAll("'", "").replaceAll(":", "");
             if(movie_name != ""){
                 movie_name = $.trim(movie_name);
                 var replaced_input = movie_name.replaceAll(" " , "-").toLowerCase();
@@ -63,11 +64,11 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
-                $(".submit-btn").attr("href" , "")
             }
         }      
         if(selectedValue == "horror-movies"){
-            var horror_movie_input = $(".name-input").val().replaceAll("'", "");
+            $(".submit-btn").attr("href" , "")
+            var horror_movie_input = $(".name-input").val().replaceAll("'", "").replaceAll(":", "");
             if(horror_movie_input != ""){
                 horror_movie_input= $.trim(horror_movie_input)
                 var replaced_input = horror_movie_input.replaceAll(" " , "-").toLowerCase();
@@ -77,7 +78,6 @@ $(document).ready(function(){
             }
             else{
                 alert("Please fill proper Details")
-                $(".submit-btn").attr("href" , "")
             }
         }  
     });

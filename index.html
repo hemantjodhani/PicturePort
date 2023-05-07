@@ -17,6 +17,12 @@
             font-family: "Montserrat";
         }
 
+        body{
+            background-image: url("pexels-boys-in-bristol-photography-15150350.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
         .name-input,
         .season-input,
         .season-text {
@@ -37,7 +43,7 @@
             flex-direction: column;
             gap: 20px;
             padding: 40px;
-            margin-top: 10%;
+            margin-top: 175px;
             border-radius: 15px;
             box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.3);
         }
@@ -54,6 +60,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            justify-content: center;
         }
 
         .season-text {
@@ -99,8 +106,6 @@
                 <label for="movie">Movie</label>
                 <input type="radio" id="web-shows" name="type" value="web-shows">
                 <label for="web-shows">Web Shows</label>
-                <input type="radio" id="horror-movies" name="type" value="horror-movies">
-                <label for="horror-movies">Horror Movies</label>
             </div>
             <div class="video-input">
                 <input class="name-input" placeholder="" type="text">
@@ -119,3 +124,15 @@
 </body>
 
 </html>
+
+
+
+
+<style>
+    @media screen and (max-width : 530px){
+        .wrap{
+            padding: 20px;
+            margin-top: 350px;
+        }
+    }
+</style>

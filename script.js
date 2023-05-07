@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     var movie_url = "https://www.nollyverse.com/movie/phenomena/download/"
     var web_shows_url = "https://www.nollyverse.com/serie/wednesday/season-1"
-    var horror_movie_url = "https://adhirit.online/lights-out-2016-full-movie-download-for-free-adhiritmovies/"
+    // var horror_movie_url = "https://adhirit.online/lights-out-2016-full-movie-download-for-free-adhiritmovies/"
     var selectedValue = ""
 
     $('input[type="radio"][name="type"]').change(function() {
@@ -11,19 +11,14 @@ $(document).ready(function(){
             $(".name-input").show()
             $(".season-input,.season-text").show()
             $(".name-input").attr("placeholder" , "Search a Webshow")
+            $("body").css("background-image", "url(pexels-ellie-burgin-4057890.jpg)")
         }
         if(selectedValue == "movie"){
             $(".name-input").show()
             $(".season-input,.season-text").hide()
             $(".name-input").attr("placeholder" , "Search a Movie")
+            $("body").css("background-image", "url(pexels-boys-in-bristol-photography-15150350.jpg)")
         }     
-        if(selectedValue == "horror-movies"){
-            $(".name-input").show()
-            $(".season-input,.season-text").hide()
-            $(".name-input").attr("placeholder" , "Search a Horror Movie")
-            $("body").css("background-color", "Black");
-            $("body").css("color", "white");
-        }
         else{
             $("body").css("background-color", "white");
             $("body").css("color", "black");
@@ -61,20 +56,6 @@ $(document).ready(function(){
                 $("input[name='myRadio'][checked]").prop("checked", false);          
                 $(".name-input").val("")
                 $(".season-input").val("")   
-            }
-            else{
-                alert("Please fill proper Details")
-            }
-        }      
-        if(selectedValue == "horror-movies"){
-            $(".submit-btn").attr("href" , "")
-            var horror_movie_input = $(".name-input").val().replaceAll("'", "").replaceAll(":", "");
-            if(horror_movie_input != ""){
-                horror_movie_input= $.trim(horror_movie_input)
-                var replaced_input = horror_movie_input.replaceAll(" " , "-").toLowerCase();
-                horror_movie_url = "https://adhirit.online/"+replaced_input+"/"
-                $(".submit-btn").attr("href" , horror_movie_url)
-                $(".name-input").val("")
             }
             else{
                 alert("Please fill proper Details")
